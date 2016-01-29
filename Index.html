@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding"> -->
+  <meta charset="UTF-8">
+  <meta name="description" content="handwritten digit recognition">
+  <meta name="keywords" content="d3, d3.js, visualization, machine learning">
+  <meta name="author" content="Jesús Martínez-Blanco">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+
+  <title>NUMBERS </title>
+  <!--<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />-->
+  <link href="css/chumo.css" rel="stylesheet">
+  <!-- <link href="css/manifest.json" rel="manifest">  -->
+
+  <script src="lib/d3.min.js"></script>
+  <script src="lib/randomforest.js"></script>
+  <script src="lib/svm.js"></script>
+
+  <script src="lib/underscore-min.js"></script>
+  <script src="lib/numeric-1.2.6.min.js"></script>
+
+  <script src="lib/plotly.min.js"></script>
+</head>
+
+
+<body style='text-align:center'>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <!--<script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55a3a9ab5aac0b42" async="async"></script>-->
+
+  <!--  width and height of the window -->
+  <script>
+    var W = window.innerWidth;
+    var H = window.innerHeight;
+  </script>
+
+  <!-- <p id='author'><a href='https://github.com/chumo'>chumo &copy 2015</a></p> -->
+
+  <div id='title'>
+    <h1>Digit Recognition</h1>
+    <p>Draw a number from 0 to 9 in the top-left panel.</p>
+    <p>Click that panel to let the app recognize it.</p>
+    <p>Click the purple shadow on the right to select the predictors (normalized X-Y or angles).</p>
+  </div>
+
+  <div id='container'>
+    <div id='drawings'></div>
+    <div id='graphRF'></div>
+    <div id='graphSVM'></div>
+
+    <div id='plotX'></div>
+    <div id='plotY'></div>
+    <div id='plotSlopes'></div>
+
+    <div id='overlay' onclick="switchTrainingFeatures()"></div>
+  </div>
+
+  <p id='author'><a href='https://github.com/chumo/NUMBERS'>chumo &copy 2016</a></p>
+
+  <!-- Load some auxiliary functions -->
+  <script src="js/Aux.js"></script>
+
+  <!-- Create the svgs and so -->
+  <script src='js/Script.js'></script>
+
+  <!-- Train the random forest -->
+  <script src="js/TrainRF.js"></script>
+
+  <!-- Plots of features -->
+  <script src='js/Plots.js'></script>
+
+  <!-- Graphs of classifications -->
+  <script src='js/Graphs.js'></script>
+
+  <!-- Google analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-64906297-6', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+
+</html>
