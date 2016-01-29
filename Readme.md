@@ -1,5 +1,7 @@
 # NUMBERS
 
+Use the web app [here](https://github.com/chumo/NUMBERS).
+
 ### Description
 This is a D3 web app provided with a machine learning engine (_random forest_ and _svm_ algorithms) to identify handwritten digits from 0 to 9. No need to use convolutional neural nets because the input data is not an image, but a sequence of coordinates along the handwritten path defining the digit.
 
